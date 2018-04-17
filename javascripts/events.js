@@ -1,5 +1,7 @@
+const data = require('./data');
+const itemsDom = require('./itemsDom');
 const departmentCards = document.getElementsByClassName('department');
-
+const departmentContaierDiv = document.getElementById('departments');
 const showDepartmentName = (e) => {
   const departmentImg = e.target.children[1];
   const departmentName = e.target.children[0];
@@ -18,7 +20,11 @@ const hideDepartmentName = (e) => {
 
 const showItems = (e) => {
   const departmentId = e.target.parentNode.children[0].dataset.departmentId;
-  console.log('data-id', departmentId);
+  // console.log('data-id', departmentId);
+  const selectedItems = data.getItemsByDepartment(departmentId);
+  // console.log('selected items', selectedItems);
+  departmentContaierDiv.innerHTML = '';
+  itemsDom(selectedItems);
 
   // TODO: filter items by departmentId
 };
