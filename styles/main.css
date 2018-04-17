@@ -23,3 +23,14 @@ margin: 20px 0;
   font-size: 50px;
   left: 40px;
 }
+
+/* ITEMS */
+
+.item-image{
+  height: 100px;
+  width: 100px;
+}
+
+.item .panel {
+  height: 270px;
+}
